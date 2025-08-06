@@ -112,8 +112,10 @@ if __name__ == "__main__":
 
     ticket_summary["ALL"] = overall_summary
 
-    with open("ticket_store_summary.json", "w") as f:
-        json.dump(ticket_summary, f, indent=2)
+   output_path = "../frontend/public/ticket_store_summary.json"
+with open(output_path, "w") as f:
+    json.dump(ticket_summary, f, indent=2)
 
-    print("Dashboard data saved to ticket_store_summary.json")
+print(f"Dashboard data saved to {output_path}")
+
 
