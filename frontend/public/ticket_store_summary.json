@@ -1,0 +1,182 @@
+{
+  "store-609": {
+    "open": {
+      "low_nps": 10,
+      "google_low_rating": 1,
+      "jli_complaint": 0,
+      "other": 0,
+      "total": 11,
+      "average_age_hours": 290.6
+    },
+    "solved": {
+      "low_nps": 0,
+      "google_low_rating": 0,
+      "jli_complaint": 0,
+      "other": 0,
+      "total": 0,
+      "average_age_hours": 0
+    }
+  },
+  "store-1932": {
+    "open": {
+      "low_nps": 5,
+      "google_low_rating": 2,
+      "jli_complaint": 0,
+      "other": 0,
+      "total": 7,
+      "average_age_hours": 175.4
+    },
+    "solved": {
+      "low_nps": 0,
+      "google_low_rating": 0,
+      "jli_complaint": 0,
+      "other": 0,
+      "total": 0,
+      "average_age_hours": 0
+    }
+  },
+  "store-1270": {
+    "open": {
+      "low_nps": 5,
+      "google_low_rating": 1,
+      "jli_complaint": 0,
+      "other": 0,
+      "total": 6,
+      "average_age_hours": 276.6
+    },
+    "solved": {
+      "low_nps": 0,
+      "google_low_rating": 0,
+      "jli_complaint": 0,
+      "other": 0,
+      "total": 0,
+      "average_age_hours": 0
+    }
+  },
+  "store-1002": {
+    "open": {
+      "low_nps": 2,
+      "google_low_rating": 1,
+      "jli_complaint": 0,
+      "other": 0,
+      "total": 3,
+      "average_age_hours": 225.4
+    },
+    "solved": {
+      "low_nps": 0,
+      "google_low_rating": 0,
+      "jli_complaint": 0,
+      "other": 0,
+      "total": 0,
+      "average_age_hours": 0
+    }
+  },
+  "store-2911": {
+    "open": {
+      "low_nps": 6,
+      "google_low_rating": 0,
+      "jli_complaint": 0,
+      "other": 0,
+      "total": 6,
+      "average_age_hours": 286.3
+    },
+    "solved": {
+      "low_nps": 0,
+      "google_low_rating": 0,
+      "jli_complaint": 0,
+      "other": 0,
+      "total": 0,
+      "average_age_hours": 0
+    }
+  },
+  "store-4182": {
+    "open": {
+      "low_nps": 5,
+      "google_low_rating": 0,
+      "jli_complaint": 1,
+      "other": 0,
+      "total": 6,
+      "average_age_hours": 502.0
+    },
+    "solved": {
+      "low_nps": 0,
+      "google_low_rating": 0,
+      "jli_complaint": 0,
+      "other": 0,
+      "total": 0,
+      "average_age_hours": 0
+    }
+  },
+  "store-1396": {
+    "open": {
+      "low_nps": 9,
+      "google_low_rating": 0,
+      "jli_complaint": 1,
+      "other": 0,
+      "total": 10,
+      "average_age_hours": 349.2
+    },
+    "solved": {
+      "low_nps": 0,
+      "google_low_rating": 0,
+      "jli_complaint": 0,
+      "other": 0,
+      "total": 0,
+      "average_age_hours": 0
+    }
+  },
+  "store-1257": {
+    "open": {
+      "low_nps": 4,
+      "google_low_rating": 0,
+      "jli_complaint": 0,
+      "other": 0,
+      "total": 4,
+      "average_age_hours": 363.7
+    },
+    "solved": {
+      "low_nps": 0,
+      "google_low_rating": 0,
+      "jli_complaint": 0,
+      "other": 0,
+      "total": 0,
+      "average_age_hours": 0
+    }
+  },
+  "not_specified": {
+    "open": {
+      "low_nps": 0,
+      "google_low_rating": 0,
+      "jli_complaint": 1,
+      "other": 4,
+      "total": 5,
+      "average_age_hours": 759.0
+    },
+    "solved": {
+      "low_nps": 0,
+      "google_low_rating": 0,
+      "jli_complaint": 0,
+      "other": 3,
+      "total": 3,
+      "average_age_hours": 484.6
+    }
+  },
+  "ALL": {
+    "open": {
+      "low_nps": 46,
+      "google_low_rating": 5,
+      "jli_complaint": 3,
+      "other": 4,
+      "total": 58,
+      "average_age_hours": 348.8
+    },
+    "solved": {
+      "low_nps": 0,
+      "google_low_rating": 0,
+      "jli_complaint": 0,
+      "other": 3,
+      "total": 3,
+      "average_age_hours": 484.6
+    }
+  }
+}
