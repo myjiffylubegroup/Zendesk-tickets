@@ -4,14 +4,14 @@ from datetime import datetime, timedelta
 import os
 
 # === CONFIGURATION ===
-CRED_FILE = r"E:\My Drive\Jiffy Lube Ops Dashboards\Secure-Credentials\zendesk.txt"
-ZENDESK_EMAIL = "sporcher@throttlemuscle.com"
+import os
 
-def load_token_from_txt(path):
-    with open(path, 'r') as f:
-        return f.read().strip()
+ZENDESK_EMAIL = os.getenv("ZENDESK_EMAIL")
+ZENDESK_API_TOKEN = os.getenv("ZENDESK_API_TOKEN")
 
-ZENDESK_API_TOKEN = load_token_from_txt(CRED_FILE)
+if not ZENDESK_EMAIL or not ZENDESK_API_TOKEN:
+    raise Exception("Zendesk credentials not found in environment variables.")
+
 ZENDESK_SUBDOMAIN = "myjiffylube"
 BASE_URL = f"https://{ZENDESK_SUBDOMAIN}.zendesk.com/api/v2"
 AUTH = (f"{ZENDESK_EMAIL}/token", ZENDESK_API_TOKEN)
@@ -116,3 +116,4 @@ if __name__ == "__main__":
         json.dump(ticket_summary, f, indent=2)
 
     print("Dashboard data saved to ticket_store_summary.json")
+
