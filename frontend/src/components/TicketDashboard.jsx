@@ -25,7 +25,7 @@ export default function TicketDashboard() {
     <div style={{ fontFamily: "Arial, sans-serif", backgroundColor: "#f5f5f5", padding: 20 }}>
       <header style={{ textAlign: "center", marginBottom: 20 }}>
         <img src="/JL_Multicare_Horz_1C.png" alt="Jiffy Lube Logo" style={{ maxWidth: 300 }} />
-        <h1 style={{ color: "#73000a", margin: "10px 0" }}>🎯 Zendesk Ticket Overview</h1>
+        <h1 style={{ color: "#0006b0", margin: "10px 0" }}>🎯 Zendesk Ticket Overview</h1>
       </header>
 
       <table style={{ width: "100%", borderCollapse: "collapse", marginTop: 20 }}>
@@ -43,7 +43,7 @@ export default function TicketDashboard() {
         <tbody>
           {stores.map(([store, stats], idx) => {
             const s = stats.open;
-            const bgColor = idx % 2 === 0 ? "#ffffff" : "#fdecea";
+            const bgColor = idx % 2 === 0 ? "#ffffff" : "#0591fc";
             return (
               <tr key={store} style={{ backgroundColor: bgColor }}>
                 <td style={tdStyleBold}>{store}</td>
@@ -60,11 +60,11 @@ export default function TicketDashboard() {
           })}
 
           {allStats && (
-            <tr style={{ backgroundColor: "#fdecea", fontWeight: "bold" }}>
+            <tr style={{ backgroundColor: "#0591fc", fontWeight: "bold" }}>
               <td style={tdStyle}>ALL STORES</td>
-              <td style={{ ...tdStyle, color: "#b91c1c" }}>{allStats.low_nps}</td>
+              <td style={{ ...tdStyle, color: "#000000" }}>{allStats.low_nps}</td>
               <td style={tdStyle}>{allStats.google_low_rating}</td>
-              <td style={{ ...tdStyle, color: "#be185d" }}>{allStats.jli_complaint}</td>
+              <td style={{ ...tdStyle, color: "#000000" }}>{allStats.jli_complaint}</td>
               <td style={tdStyle}>{allStats.other}</td>
               <td style={tdStyle}>{allStats.total}</td>
               <td style={tdStyle}>{allStats.average_age_hours.toFixed(1)}h</td>
@@ -85,7 +85,7 @@ export default function TicketDashboard() {
 const thStyle = {
   padding: "12px",
   borderBottom: "1px solid #ddd",
-  backgroundColor: "#73000a",
+  backgroundColor: "#0006b0",
   color: "white",
   textAlign: "center",
 };
