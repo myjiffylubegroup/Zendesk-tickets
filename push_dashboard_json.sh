@@ -14,7 +14,6 @@ echo "Copying JSON into frontend/public/"
 mkdir -p frontend/public
 cp ticket_store_summary.json frontend/public/ticket_store_summary.json || exit 1
 
-
 # Git config (only needed once if this runs inside a stateless container)
 git config --global user.name "Render Bot"
 git config --global user.email "noreply@render.com"
