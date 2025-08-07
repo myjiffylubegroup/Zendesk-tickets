@@ -9,7 +9,7 @@ export default function TicketDashboard() {
       .then(setData);
   }, []);
 
-  if (!data) return <div className="p-4 text-center text-lg">Loading dashboard...</div>;
+  if (!data) return <div className="p-4 text-center text-lg animate-pulse">Loading dashboard...</div>;
 
   const stores = Object.entries(data)
     .filter(([store]) => store !== "ALL")
@@ -22,60 +22,62 @@ export default function TicketDashboard() {
   const allStats = data.ALL?.open;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-200 text-gray-800 p-6">
-      <div className="max-w-5xl mx-auto">
-        <h1 className="text-3xl font-bold text-center mb-6">📊 Zendesk Ticket Dashboard</h1>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-tr from-yellow-50 via-white to-yellow-100 text-gray-800 p-8">
+      <div className="w-full max-w-6xl text-center">
+        <img src="/JL_Multicare_Horz_1C.png" alt="Jiffy Lube Logo" className="mx-auto mb-6 w-48" />
+        <h1 className="text-4xl font-extrabold mb-10 tracking-tight" style={{ color: '#BA0C2F' }}>
+          🎯 Zendesk Ticket Overview
+        </h1>
 
-        <div className="overflow-x-auto rounded-xl shadow-md bg-white">
-          <table className="min-w-full text-sm text-left border border-gray-200">
-            <thead className="bg-slate-100 text-gray-700 text-xs uppercase">
+        <div className="overflow-x-auto rounded-2xl shadow-lg bg-white ring-1 ring-gray-200">
+          <table className="min-w-full text-sm text-left">
+            <thead className="bg-yellow-100 text-gray-800 text-xs font-semibold border-b border-gray-300">
               <tr>
-                <th className="px-4 py-3">🏪 Store</th>
-                <th className="px-4 py-3">💢 Low NPS Score</th>
-                <th className="px-4 py-3">⭐ Low Google Rating</th>
-                <th className="px-4 py-3">📩 JLI Complaint</th>
-                <th className="px-4 py-3">🗂 Other</th>
-                <th className="px-4 py-3">📦 Total</th>
-                <th className="px-4 py-3">⏱ Time Open</th>
+                <th className="px-5 py-4">🏪 STORE</th>
+                <th className="px-5 py-4">💢 LOW NPS SCORE</th>
+                <th className="px-5 py-4">⭐ LOW GOOGLE RATING</th>
+                <th className="px-5 py-4">📩 JLI COMPLAINT</th>
+                <th className="px-5 py-4">🗂 OTHER</th>
+                <th className="px-5 py-4">📦 TOTAL</th>
+                <th className="px-5 py-4">⏱ TIME OPEN</th>
               </tr>
             </thead>
             <tbody>
               {stores.map(([store, stats], idx) => {
                 const s = stats.open;
-                const bg = idx % 2 === 0 ? "bg-white" : "bg-slate-50";
+                const bg = idx % 2 === 0 ? "bg-white" : "bg-yellow-50";
                 return (
-                  <tr key={store} className={`${bg} hover:bg-yellow-50 transition`}>
-                    <td className="px-4 py-2 font-medium whitespace-nowrap">{store}</td>
-                    <td className="px-4 py-2 text-red-600">{s.low_nps}</td>
-                    <td className="px-4 py-2">{s.google_low_rating}</td>
-                    <td className="px-4 py-2">{s.jli_complaint}</td>
-                    <td className="px-4 py-2">{s.other}</td>
-                    <td className="px-4 py-2 font-semibold">{s.total}</td>
-                    <td className={`px-4 py-2 ${s.average_age_hours > 48 ? "text-rose-600 font-bold" : "text-gray-700"}`}>
-                      {s.average_age_hours}
+                  <tr key={store} className={`${bg} hover:bg-yellow-100 transition-all`}>
+                    <td className="px-5 py-3 font-semibold text-yellow-900 whitespace-nowrap">{store}</td>
+                    <td className="px-5 py-3 text-red-600 font-medium">{s.low_nps}</td>
+                    <td className="px-5 py-3">{s.google_low_rating}</td>
+                    <td className="px-5 py-3">{s.jli_complaint}</td>
+                    <td className="px-5 py-3">{s.other}</td>
+                    <td className="px-5 py-3 font-semibold">{s.total}</td>
+                    <td className={`px-5 py-3 ${s.average_age_hours > 48 ? "text-rose-600 font-bold" : "text-gray-700"}`}>
+                      {s.average_age_hours.toFixed(1)}h
                     </td>
                   </tr>
                 );
               })}
 
-              {/* Summary row */}
               {allStats && (
-                <tr className="bg-slate-200 text-sm font-bold border-t border-gray-300">
-                  <td className="px-4 py-3">ALL STORES</td>
-                  <td className="px-4 py-3 text-red-700">{allStats.low_nps}</td>
-                  <td className="px-4 py-3">{allStats.google_low_rating}</td>
-                  <td className="px-4 py-3">{allStats.jli_complaint}</td>
-                  <td className="px-4 py-3">{allStats.other}</td>
-                  <td className="px-4 py-3">{allStats.total}</td>
-                  <td className="px-4 py-3">{allStats.average_age_hours}</td>
+                <tr className="bg-yellow-200 text-sm font-extrabold border-t border-gray-400">
+                  <td className="px-5 py-4">ALL STORES</td>
+                  <td className="px-5 py-4 text-red-700">{allStats.low_nps}</td>
+                  <td className="px-5 py-4">{allStats.google_low_rating}</td>
+                  <td className="px-5 py-4">{allStats.jli_complaint}</td>
+                  <td className="px-5 py-4">{allStats.other}</td>
+                  <td className="px-5 py-4">{allStats.total}</td>
+                  <td className="px-5 py-4">{allStats.average_age_hours.toFixed(1)}h</td>
                 </tr>
               )}
             </tbody>
           </table>
         </div>
 
-        <p className="text-xs text-gray-500 text-center mt-4">
-          Updated from Zendesk API • Time Open in hours • Red = over 48h
+        <p className="text-xs text-center text-gray-500 mt-6">
+          ⏳ Data from Zendesk API · Updated Daily · Highlighted if Open > 48h
         </p>
       </div>
     </div>
