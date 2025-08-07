@@ -47,12 +47,12 @@ export default function TicketDashboard() {
             return (
               <tr key={store} style={{ backgroundColor: bgColor }}>
                 <td style={tdStyleBold}>{store}</td>
-                <td style={{ ...tdStyle, color: "#b91c1c", fontWeight: "bold" }}>{s.low_nps}</td>
+                <td style={{ ...tdStyle, color: "#000000", fontWeight: "bold" }}>{s.low_nps}</td>
                 <td style={tdStyle}>{s.google_low_rating}</td>
-                <td style={{ ...tdStyle, color: "#be185d" }}>{s.jli_complaint}</td>
+                <td style={{ ...tdStyle, color: "#000000" }}>{s.jli_complaint}</td>
                 <td style={tdStyle}>{s.other}</td>
                 <td style={{ ...tdStyle, fontWeight: "bold" }}>{s.total}</td>
-                <td style={{ ...tdStyle, fontWeight: "bold", color: s.average_age_hours > 48 ? "#b91c1c" : "#15803d" }}>
+                <td style={{ ...tdStyle, fontWeight: "bold", color: s.average_age_hours > 48 ? "#b91c1c" : "#000000" }}>
                   {s.average_age_hours.toFixed(1)}h
                 </td>
               </tr>
@@ -99,6 +99,6 @@ const tdStyle = {
 const tdStyleBold = {
   ...tdStyle,
   fontWeight: "bold",
-  color: "#73000a",
+  color: "#000000",
   whiteSpace: "nowrap",
 };
