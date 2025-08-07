@@ -67,7 +67,9 @@ export default function TicketDashboard() {
               <td style={{ ...tdStyle, color: "#000000" }}>{allStats.jli_complaint}</td>
               <td style={tdStyle}>{allStats.other}</td>
               <td style={tdStyle}>{allStats.total}</td>
-              <td style={tdStyle}>{allStats.average_age_hours.toFixed(1)}h</td>
+               <td style={{ ...tdStyle, fontWeight: "bold", color: s.average_age_hours > 48 ? "#b91c1c" : "#000000" }}>
+                  {s.average_age_hours.toFixed(1)}h
+                </td>
             </tr>
           )}
         </tbody>
