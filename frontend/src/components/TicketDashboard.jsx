@@ -87,13 +87,13 @@ const thStyle = {
   borderBottom: "1px solid #ddd",
   backgroundColor: "#73000a",
   color: "white",
-  textAlign: "left",
+  textAlign: "center",
 };
 
 const tdStyle = {
   padding: "12px",
   borderBottom: "1px solid #ddd",
-  textAlign: "left",
+  textAlign: "center",
 };
 
 const tdStyleBold = {
