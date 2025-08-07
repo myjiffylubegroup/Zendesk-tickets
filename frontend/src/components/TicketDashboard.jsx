@@ -23,14 +23,14 @@ export default function TicketDashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-tr from-yellow-50 via-white to-yellow-100 text-gray-800 flex flex-col items-center justify-center p-6">
-      <div className="w-full max-w-7xl text-center">
-        <img src="/JL_Multicare_Horz_1C.png" alt="Jiffy Lube Logo" className="mx-auto mb-4 w-64 max-w-full" />
+      <div className="w-full max-w-5xl text-center mx-auto">
+        <img src="/JL_Multicare_Horz_1C.png" alt="Jiffy Lube Logo" className="mx-auto mb-8 w-48 max-w-full" />
         <h1 className="text-5xl font-extrabold mb-10 tracking-tight" style={{ color: '#BA0C2F' }}>
           🎯 Zendesk Ticket Overview
         </h1>
 
         <div className="overflow-x-auto rounded-xl shadow-xl bg-white ring-2 ring-gray-300">
-          <table className="min-w-full text-md text-left">
+          <table className="min-w-full text-md text-center">
             <thead className="bg-yellow-200 text-gray-800 text-sm font-bold uppercase">
               <tr>
                 <th className="px-6 py-4">🏪 STORE</th>
