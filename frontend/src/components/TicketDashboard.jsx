@@ -9,7 +9,7 @@ export default function TicketDashboard() {
       .then(setData);
   }, []);
 
-  if (!data) return <div className="p-4 text-center text-lg animate-pulse">Loading dashboard...</div>;
+  if (!data) return <div className="p-6 text-center text-xl animate-pulse">Loading dashboard...</div>;
 
   const stores = Object.entries(data)
     .filter(([store]) => store !== "ALL")
@@ -22,62 +22,60 @@ export default function TicketDashboard() {
   const allStats = data.ALL?.open;
 
   return (
-    <div className="min-h-screen bg-gradient-to-tr from-yellow-50 via-white to-yellow-100 text-gray-800 flex flex-col items-center justify-center p-6">
-      <div className="w-full max-w-5xl text-center mx-auto">
-        <img src="/JL_Multicare_Horz_1C.png" alt="Jiffy Lube Logo" className="mx-auto mb-8 w-48 max-w-full" />
-        <h1 className="text-5xl font-extrabold mb-10 tracking-tight" style={{ color: '#BA0C2F' }}>
-          🎯 Zendesk Ticket Overview
-        </h1>
+    <div className="min-h-screen bg-[#f5f5f5] text-gray-900 px-6 py-10">
+      <header className="text-center mb-10">
+        <img src="/JL_Multicare_Horz_1C.png" alt="Jiffy Lube Logo" className="mx-auto mb-4 max-w-[300px]" />
+        <h1 className="text-4xl font-extrabold text-[#73000a]">🎯 Zendesk Ticket Overview</h1>
+      </header>
 
-        <div className="overflow-x-auto rounded-xl shadow-xl bg-white ring-2 ring-gray-300">
-          <table className="min-w-full text-md text-center">
-            <thead className="bg-yellow-200 text-gray-800 text-sm font-bold uppercase">
-              <tr>
-                <th className="px-6 py-4">🏪 STORE</th>
-                <th className="px-6 py-4">💢 LOW NPS SCORE</th>
-                <th className="px-6 py-4">⭐ LOW GOOGLE RATING</th>
-                <th className="px-6 py-4">📩 JLI COMPLAINT</th>
-                <th className="px-6 py-4">🗂 OTHER</th>
-                <th className="px-6 py-4">📦 TOTAL</th>
-                <th className="px-6 py-4">⏱ TIME OPEN</th>
-              </tr>
-            </thead>
-            <tbody>
-              {stores.map(([store, stats], idx) => {
-                const s = stats.open;
-                const rowColor = idx % 2 === 0 ? "bg-white" : "bg-yellow-50";
-                return (
-                  <tr key={store} className={`${rowColor} hover:bg-yellow-100 transition-all text-center`}>
-                    <td className="px-6 py-4 font-semibold text-yellow-900 whitespace-nowrap">{store}</td>
-                    <td className="px-6 py-4 text-red-600 font-semibold">{s.low_nps}</td>
-                    <td className="px-6 py-4 text-yellow-800">{s.google_low_rating}</td>
-                    <td className="px-6 py-4 text-pink-700">{s.jli_complaint}</td>
-                    <td className="px-6 py-4 text-gray-700">{s.other}</td>
-                    <td className="px-6 py-4 font-bold text-gray-900">{s.total}</td>
-                    <td className={`px-6 py-4 font-medium ${s.average_age_hours > 48 ? "text-red-700" : "text-green-700"}`}>{s.average_age_hours.toFixed(1)}h</td>
-                  </tr>
-                );
-              })}
-
-              {allStats && (
-                <tr className="bg-yellow-300 text-md font-extrabold border-t border-gray-400 text-center">
-                  <td className="px-6 py-5">ALL STORES</td>
-                  <td className="px-6 py-5 text-red-800">{allStats.low_nps}</td>
-                  <td className="px-6 py-5 text-yellow-900">{allStats.google_low_rating}</td>
-                  <td className="px-6 py-5 text-pink-800">{allStats.jli_complaint}</td>
-                  <td className="px-6 py-5">{allStats.other}</td>
-                  <td className="px-6 py-5">{allStats.total}</td>
-                  <td className="px-6 py-5">{allStats.average_age_hours.toFixed(1)}h</td>
+      <main className="max-w-6xl mx-auto">
+        <table className="w-full border-collapse shadow-xl">
+          <thead>
+            <tr>
+              <th className="bg-[#73000a] text-white px-4 py-3 text-left">🏪 STORE</th>
+              <th className="bg-[#73000a] text-white px-4 py-3 text-left">❌ LOW NPS SCORE</th>
+              <th className="bg-[#73000a] text-white px-4 py-3 text-left">⭐ LOW GOOGLE RATING</th>
+              <th className="bg-[#73000a] text-white px-4 py-3 text-left">📩 JLI COMPLAINT</th>
+              <th className="bg-[#73000a] text-white px-4 py-3 text-left">🗂 OTHER</th>
+              <th className="bg-[#73000a] text-white px-4 py-3 text-left">📦 TOTAL</th>
+              <th className="bg-[#73000a] text-white px-4 py-3 text-left">⏱ TIME OPEN</th>
+            </tr>
+          </thead>
+          <tbody>
+            {stores.map(([store, stats], idx) => {
+              const s = stats.open;
+              const rowColor = idx % 2 === 0 ? "bg-white" : "bg-[#fdecea]";
+              return (
+                <tr key={store} className={`${rowColor} text-left`}>
+                  <td className="px-4 py-3 font-bold text-[#73000a] whitespace-nowrap">{store}</td>
+                  <td className="px-4 py-3 font-bold text-red-600">{s.low_nps}</td>
+                  <td className="px-4 py-3">{s.google_low_rating}</td>
+                  <td className="px-4 py-3 text-pink-700">{s.jli_complaint}</td>
+                  <td className="px-4 py-3">{s.other}</td>
+                  <td className="px-4 py-3 font-semibold">{s.total}</td>
+                  <td className={`px-4 py-3 font-semibold ${s.average_age_hours > 48 ? "text-red-700" : "text-green-700"}`}>{s.average_age_hours.toFixed(1)}h</td>
                 </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
+              );
+            })}
 
-        <p className="text-sm text-center text-gray-600 mt-6">
-          ⏳ Data from Zendesk API · Updated Daily · <span className="text-red-700 font-semibold">Red</span> = Over 48h
-        </p>
-      </div>
+            {allStats && (
+              <tr className="bg-[#fdecea] text-left font-bold border-t border-gray-300">
+                <td className="px-4 py-4">ALL STORES</td>
+                <td className="px-4 py-4 text-red-700">{allStats.low_nps}</td>
+                <td className="px-4 py-4">{allStats.google_low_rating}</td>
+                <td className="px-4 py-4 text-pink-700">{allStats.jli_complaint}</td>
+                <td className="px-4 py-4">{allStats.other}</td>
+                <td className="px-4 py-4">{allStats.total}</td>
+                <td className="px-4 py-4">{allStats.average_age_hours.toFixed(1)}h</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+
+        <footer className="text-center mt-8 text-sm italic text-gray-600">
+          ⏳ Data from Zendesk API · Updated Daily · Red = Over 48h
+        </footer>
+      </main>
     </div>
   );
 }
