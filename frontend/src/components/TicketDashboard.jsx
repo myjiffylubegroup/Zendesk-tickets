@@ -42,18 +42,18 @@ export default function TicketDashboard() {
         </thead>
         <tbody>
           {stores.map(([store, stats], idx) => {
-            const s = stats.open;
+            const metrics = stats.open;
             const bgColor = idx % 2 === 0 ? "#ffffff" : "#0591fc";
             return (
               <tr key={store} style={{ backgroundColor: bgColor }}>
                 <td style={tdStyleBold}>{store}</td>
-                <td style={{ ...tdStyle, color: "#000000", fontWeight: "bold" }}>{s.low_nps}</td>
-                <td style={tdStyle}>{s.google_low_rating}</td>
-                <td style={{ ...tdStyle, color: "#000000" }}>{s.jli_complaint}</td>
-                <td style={tdStyle}>{s.other}</td>
-                <td style={{ ...tdStyle, fontWeight: "bold" }}>{s.total}</td>
-                <td style={{ ...tdStyle, fontWeight: "bold", color: s.average_age_hours > 48 ? "#b91c1c" : "#000000" }}>
-                  {s.average_age_hours.toFixed(1)}h
+                <td style={{ ...tdStyle, color: "#000000", fontWeight: "bold" }}>{metrics.low_nps}</td>
+                <td style={tdStyle}>{metrics.google_low_rating}</td>
+                <td style={{ ...tdStyle, color: "#000000" }}>{metrics.jli_complaint}</td>
+                <td style={tdStyle}>{metrics.other}</td>
+                <td style={{ ...tdStyle, fontWeight: "bold" }}>{metrics.total}</td>
+                <td style={{ ...tdStyle, fontWeight: "bold", color: metrics.average_age_hours > 48 ? "#b91c1c" : "#000000" }}>
+                  {metrics.average_age_hours.toFixed(1)}h
                 </td>
               </tr>
             );
@@ -67,9 +67,9 @@ export default function TicketDashboard() {
               <td style={{ ...tdStyle, color: "#000000" }}>{allStats.jli_complaint}</td>
               <td style={tdStyle}>{allStats.other}</td>
               <td style={tdStyle}>{allStats.total}</td>
-               <td style={{ ...tdStyle, fontWeight: "bold", color: s.average_age_hours > 48 ? "#b91c1c" : "#000000" }}>
-                  {s.average_age_hours.toFixed(1)}h
-                </td>
+              <td style={{ ...tdStyle, fontWeight: "bold", color: allStats.average_age_hours > 48 ? "#b91c1c" : "#000000" }}>
+                {allStats.average_age_hours.toFixed(1)}h
+              </td>
             </tr>
           )}
         </tbody>
@@ -77,7 +77,7 @@ export default function TicketDashboard() {
 
       <footer style={{ marginTop: 30, textAlign: "center" }}>
         <p style={{ fontWeight: "bold", fontStyle: "italic", color: "#555" }}>
-          ⏳ Data from Zendesk API · Updated Daily · Red = Over 48h
+          ⏳ Data from Zendesk API · Updated Every 4 Hours · Red = Over 48h
         </p>
       </footer>
     </div>
